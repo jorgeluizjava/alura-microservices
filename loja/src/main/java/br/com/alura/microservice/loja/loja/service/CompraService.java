@@ -12,16 +12,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class CompraService {
 
-    private Logger LOG = LoggerFactory.getLogger(CompraService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CompraService.class);
 
     private FornecedorClient fornecedorClient;
 
     public Compra realizaCompra(CompraDTO compraDTO) {
 
+        LOG.info("Buscando informações do fornecedor de {}", compraDTO.getEndereco().getEstado());
         InfoFornecedorDTO infoFornecedorDTO = fornecedorClient.getInfoPorEstado(compraDTO.getEndereco().getEstado());
 
         LOG.info("Endereço do fornecedor: " + infoFornecedorDTO.getEndereco());
 
+        LOG.info("Realizando um pedido");
         InforPedidoDTO pedido = fornecedorClient.realizaPedido(compraDTO.getItens());
 
         LOG.info("Pedido realizado com sucesso: {}", pedido);
