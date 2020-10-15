@@ -1,10 +1,8 @@
 spring:
   application:
-    name: fornecedor
-
+    name: 'fornecedor'
   profiles:
     active: default
   cloud:
     config:
-      uri:
-        - http://localhost:8888
+      uri: http://localhost:8888

@@ -1,4 +1,4 @@
-package br.com.alura.microservice.fornecedor.controller;
+package br.com.alura.microservice.fornecedor;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
