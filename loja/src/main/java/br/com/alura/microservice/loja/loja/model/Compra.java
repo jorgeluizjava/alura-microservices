@@ -1,7 +1,14 @@
 package br.com.alura.microservice.loja.loja.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "compra")
 public class Compra {
 
+    @Id
     private Long id;
     private Integer tempoDePreparo;
     private String endereco;
